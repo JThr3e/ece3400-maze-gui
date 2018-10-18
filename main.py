@@ -1,5 +1,8 @@
 import serial, argparse
+import time
+import pygame
 from gui.controller import Controller
+from pygame.locals import *
 
 if __name__ == '__main__':
   parser = argparse.ArgumentParser()
@@ -10,13 +13,13 @@ if __name__ == '__main__':
   parser.add_argument('--rows', type=int, default=2, help='Number of rows in the maze.')
   parser.add_argument('--cols', type=int, default=3, help='Number of cols in the maze.')
   args = parser.parse_args()
-
+  running = True
   try:
     # Setup the serial connection to the Arduino
     with serial.Serial(args.port, args.baudrate) as ser:
       # Setup the GUI controller
       controller = Controller(args.rows, args.cols)
-      while True:
+      while running:
         # Note: readline blocks.. If you do not terminate your message
         # with a newline, this will block forever...
         msg = ser.readline()
