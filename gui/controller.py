@@ -10,7 +10,7 @@ class Controller():
     self._model = []
     for x in range(0,rows):
       self._model.append([None] * cols)
-    self.blank = {'iamhere':False, 'west':False, 'north':False, 'east':False, 'south':False, 'tshape':False, 'tcolor':False, 'robot':False, 'explored':False}
+    self.blank = {'iamhere':False, 'west':False, 'north':False, 'east':False, 'south':False, 'tshape':'none', 'tcolor':'none', 'robot':False, 'explored':False}
     for r in range(0,rows):
       for c in  range(0, cols):
         self._model[r][c] = copy.deepcopy(self.blank)
