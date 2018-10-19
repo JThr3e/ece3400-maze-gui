@@ -2,3 +2,4 @@ pyserial
 argparse
 pandas
 numpy
+pygame
