@@ -10,7 +10,7 @@ pd.set_option('display.max_colwidth', 1)
 
 class View():
   def __init__(self, rows, cols, open_browser=False, refresh_rate=1, default_sprite='./sprites/unexplored.jpg'):
-    self.squareSize = 60
+    self.squareSize = 80
     pygame.init()
     self._refresh_rate = refresh_rate
     size = (cols*self.squareSize,rows*self.squareSize)
